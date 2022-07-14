@@ -1,0 +1,9 @@
+/models/dataset_600/
+/models/test_samples/
+*.pyc
+/tmp/
+*.log
+*.*.bak
+*.bak
+*.pdf
+*.docx
