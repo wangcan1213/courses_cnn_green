@@ -15,6 +15,6 @@ $(function () {
         let delta_height = box_height - new_height;
         $('.img-label-text-up')
             .css('position', 'relative')
-            .css('top', `${delta_height-25}px`);
+            .css('top', `${delta_height-36}px`);
     }
 })

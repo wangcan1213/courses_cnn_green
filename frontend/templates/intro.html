@@ -9,7 +9,7 @@
 <body>
     <h1>基于卷积神经网络的街景绿化评价</h1>
     <div style="display: flex;">
-        <a href="/" style="color: black; margin: auto">（回到主界面）</a>
+        <a href="/" class="a-back">（回到主界面）</a>
     </div>
     <div class="intro-contents-wrapper">
         <div class="intro-contents">
@@ -22,7 +22,7 @@
                 相应地，我们只是将标签区分为绿化充足（green=1）和不足（green=0）两种类别，
                 因此这是一个二分类问题。绿化充足和不足的照片各有300张。
             </div>
-            <img src="/static/img/data.png" alt="" width="700" class="text-img">
+            <img src="/static/img/data.png" alt="" width="1000" class="text-img">
             <h3>模型</h3>
             <h4 id="my-model">整体架构</h4>
             <div class="text-contents">
@@ -31,7 +31,7 @@
                 →全连接层（fc3）→输出层（fc4+sigmoid）”。这其中，卷积层和池化层是卷积神经网络的特色，我们将在
                 下面介绍它们的作用。
             </div>
-            <img src="/static/img/network.jpg" alt="" width="700" class="text-img">
+            <img src="/static/img/network.jpg" alt="" width="1000" class="text-img">
             <h4>卷积层在做什么？</h4>
             <div class="text-contents">
                 卷积层（convolution）是卷积神经网络中最重要的层，它的功能是通过卷积运算从图片中抽取对预测有用的特征。我们知道，栅格图像的本质就是像素矩阵，
@@ -41,12 +41,12 @@
             </div>
             <div class="img-group">
                 <div class="img-label-group">
-                    <img src="/static/img/conv1.jpg" alt="" height="300" class="text-img-with-label">
+                    <img src="/static/img/conv1.jpg" alt="" height="450" class="text-img-with-label">
                     <div class="text-contents img-label-text">（1）卷积核从左上角开始扫描</div>
                 </div>
                 <div class="box-placeholder" style="width: 200px;"></div>
                 <div class="img-label-group">
-                    <img src="/static/img/conv2.jpg" alt="" height="300" class="text-img-with-label">
+                    <img src="/static/img/conv2.jpg" alt="" height="450" class="text-img-with-label">
                     <div class="text-contents img-label-text">（2）卷积核扫描至中心位置</div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                 卷积运算为何能够提取特征？看看下面这个例子：上下两个卷积核分别提取了图像中的竖向和水平轮廓线。
                 这样的卷积核是人工设计的，而卷积神经网络中的卷积核则是由计算机通过学习得到的。
             </div>
-            <img src="/static/img/conv-case.jpg" alt="" class="text-img" width="600">
+            <img src="/static/img/conv-case.jpg" alt="" class="text-img" width="900">
             <h4>池化层在做什么？</h4>
             <div class="text-contents">
                 池化层（pooling）也经常出现在卷积神经网络中，一般接在卷积层之后，其主要目的是在保留卷积层所提取的特征的同时，大幅缩小图像尺寸，
@@ -64,19 +64,19 @@
             </div>
             <div class="img-group">
                 <div class="img-label-group">
-                    <img src="/static/img/pooling1.jpg" alt="" height="200" class="text-img-with-label">
+                    <img src="/static/img/pooling1.jpg" alt="" height="300" class="text-img-with-label">
                     <div class="text-contents img-label-text">（1）池化窗口从左上角开始扫描</div>
                 </div>
                 <div class="box-placeholder" style="width: 200px;"></div>
                 <div class="img-label-group">
-                    <img src="/static/img/pooling2.jpg" alt="" height="200" class="text-img-with-label">
+                    <img src="/static/img/pooling2.jpg" alt="" height="300" class="text-img-with-label">
                     <div class="text-contents img-label-text">（2）池化窗口扫描至下一位置</div>
                 </div>
             </div>
             <div class="text-contents">
                 上述池化运算将使输入图像的尺寸减半。下图的例子中，我们可以看到，池化层在缩小图像尺寸的同时，依然保留了主要特征。
             </div>
-            <img src="/static/img/pooling-case.jpg" alt="" class="text-img" height="400">
+            <img src="/static/img/pooling-case.jpg" alt="" class="text-img" height="600">
             <h4>为什么需要多个卷积层和池化层？</h4>
             <div class="text-contents">
                 再回过头来看看我们的<a href="#my-model">整体模型结构</a>，注意到它包含了2组“卷积层-→池化层”模块。
@@ -86,7 +86,7 @@
                 在整体结构中，前一层的输出特征将被作为后一层的输入，进行信息再加工，逐渐转化为与最终结果直接相关的特征。
             </div>
             <div class="img-label-group">
-                <img src="/static/img/vgg16.jpg" alt="" class="text-img-with-label" width="800">
+                <img src="/static/img/vgg16.jpg" alt="" class="text-img-with-label" width="1200">
                 <div class="img-label-text">VGG16网络结构</div>
             </div>
             <h3>训练和表现</h3>
@@ -100,7 +100,7 @@
                 准确率总体呈上升趋势，在100轮时已基本稳定，此时的验证准确率接近90%，具有不错的预测能力。
                 特别注意到验证准确率不低于训练准确率，表明模型没有过拟合。
             </div>
-            <img src="/static/img/trainning.jpg" alt="" class="text-img" width="600">
+            <img src="/static/img/trainning.jpg" alt="" class="text-img" width="900">
             <div class="text-contents">
                 模型在训练集和验证集上的预测准确率如下表所示。
             </div>
@@ -116,11 +116,11 @@
                 例如，下图显示了两张图像对应的Grad-CAM热力图，可以看到，卷积神经网络准确找到了各自绿化的位置，左图中这样的位置极少，
                 热力图的绝大多数位置为低值，右图中则有大量的高值区。因此可以说，卷积神经网络已经正确地学习到了关键特征，其判断是有理有据的。
             </div>
-            <img src="/static/img/grad.png" alt="" class="text-img" width="600">
+            <img src="/static/img/grad.png" alt="" class="text-img" width="900">
         </div>
     </div>
     <div style="display: flex;">
-        <a href="/" style="color: black; margin: auto">（回到主界面）</a>
+        <a href="/"  class="a-back">（回到主界面）</a>
     </div>
 </body>
 </html>

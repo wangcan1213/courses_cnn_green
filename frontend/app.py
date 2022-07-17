@@ -77,4 +77,4 @@ if __name__ == '__main__':
     MODEL = load_model(model_path)
     GRAPH = tf.get_default_graph() 
     app.secret_key = 'canwang'
-    app.run()
+    app.run(host="0.0.0.0", debug=True)
