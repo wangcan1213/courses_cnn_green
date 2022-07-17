@@ -16,5 +16,7 @@ RUN apt-get install -y libglib2.0-0 libsm6 libxrender1 libxext6
 
 EXPOSE 5000
 
-CMD ["python", "app.py"]
+# CMD ["python", "app.py"]
+
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]
 

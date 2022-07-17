@@ -8,8 +8,13 @@ import sys
 sys.path.append(os.path.abspath('../models'))
 from cnn_predict_visualize import load_model, load_image_from_bytes, predict, grad_cam, show_heatmap
 
+global MODEL, GRAPH
 app = Flask(__name__)
+app.secret_key = 'canwang'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+model_path = '../models/saved_model/cnn.model'
+MODEL = load_model(model_path)
+GRAPH = tf.get_default_graph() 
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -72,9 +77,4 @@ def show_intro():
     return render_template('intro.html')
     
 if __name__ == '__main__':
-    global MODEL, GRAPH
-    model_path = '../models/saved_model/cnn.model'
-    MODEL = load_model(model_path)
-    GRAPH = tf.get_default_graph() 
-    app.secret_key = 'canwang'
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0")
