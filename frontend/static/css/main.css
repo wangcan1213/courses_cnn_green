@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+h1 {
+    margin: auto;
+    text-align: center;
+    padding: 20px 40px;
+}
+
+h3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h4 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.text-contents {
+    font-size: 0.8rem;
+    line-height: 150%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.text-img {
+    align-self: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.text-img-with-label {
+    align-self: center;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.btn {
+    /*display:block;*/
+    width:120px;
+    height:30px;
+    margin: 10px;
+}
+
+.results {
+}
+
+.form1 {
+    display: flex;
+    justify-content: center;
+}
+
+.imagebox {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.preview {
+    width: 600px;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview_wait {
+    border-color: grey;
+    border-style: dashed;
+    border-width: 1px;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-col {
+    width: 350px;
+    height: 210px;
+    /*border-color: grey;*/
+    /*border-style: dashed;*/
+    /*border-width: 1px;*/
+    margin-left: 20px;
+    margin-right: 20px;
+    /*padding: 5px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.annotation {
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+#text_result {
+    flex-direction: column;
+    align-items: start;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.intro-contents-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.intro-contents {
+    display: flex;
+    align-content: start;
+    width: 90%;
+    flex-direction: column;
+}
+
+.img-group {
+    display: flex;
+    justify-content: center;
+}
+
+.img-label-group {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+}
+
+.img-label-text {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.img-label-text-up {
+    padding-top: 15px;
+    text-align: center;
+}

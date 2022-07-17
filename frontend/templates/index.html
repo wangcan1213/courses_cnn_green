@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>基于卷积神经网络的街景绿化评价</title>
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/main.js"></script>
+        <link rel="stylesheet" href="/static/css/main.css">
+        <link rel="icon" href="data:,">
+        <style>
+            .author {
+                margin: auto;
+                text-align: center;
+                transform:translateY(-120%);
+                font-size: 1rem;
+            }
+            .rsel {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>基于卷积神经网络的街景绿化评价</h1>
+<!--        <div class="author">作者: 王灿</div>-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <script>
+                        alert("{{message}}");
+                    </script>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="content">
+            <div class="form1">
+                <form action="/predict" enctype="multipart/form-data" method="post">
+                    <button type="button" class="btn" onclick="$('#sel1').click()">请选择街景图片</button>
+                    <input class="rsel" type="file" name="image_file"  onchange="readURL(this);" id="sel1" >
+                    <input type="submit" class="btn" value="提交预测">
+                </form>
+            </div>
+            <div class="imagebox">
+                <div class="preview preview_wait" id="preview1">
+                    <img id="blah" src="#" alt="" />
+                    <div id="preview_text">图片预览</div>
+                </div>
+            </div>
+            <div class="footer">
+                <form action="/intro">
+                    <button class="btn" style="margin-top:30px;">模型简介</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
